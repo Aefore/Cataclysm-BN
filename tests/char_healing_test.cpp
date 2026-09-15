@@ -150,8 +150,8 @@ TEST_CASE("traits and mutations affecting healing rate", "[heal][trait][mutation
     SECTION("Weakening") {
         give_one_trait(dummy, "ROT1");
 
-        REQUIRE(dummy.mutation_value("healing_awake") == -0.002f);
-        REQUIRE(dummy.mutation_value("healing_resting") == -0.25f);
+        REQUIRE(dummy.mutation_value("healing_awake") == -0.1f);
+        REQUIRE(dummy.mutation_value("healing_resting") == -0.1f);
 
         CHECK(dummy.healing_rate(awake_rest) == zero);
         CHECK_THAT(dummy.healing_rate(sleep_rest), WithinAbs(normal * 0.75f, tol));
@@ -195,8 +195,8 @@ TEST_CASE("traits and mutations affecting healing rate", "[heal][trait][mutation
     SECTION("Deterioration") {
         give_one_trait(dummy, "ROT2");
 
-        REQUIRE(dummy.mutation_value("healing_awake") == -0.02f);
-        REQUIRE(dummy.mutation_value("healing_resting") == 0.0f);
+        REQUIRE(dummy.mutation_value("healing_awake") == -0.2f);
+        REQUIRE(dummy.mutation_value("healing_resting") == -0.2f);
 
         CHECK(dummy.healing_rate(awake_rest) == zero);
         CHECK_THAT(dummy.healing_rate(sleep_rest), WithinAbs(normal, tol));
@@ -206,8 +206,8 @@ TEST_CASE("traits and mutations affecting healing rate", "[heal][trait][mutation
     SECTION("Disintegration") {
         give_one_trait(dummy, "ROT3");
 
-        REQUIRE(dummy.mutation_value("healing_awake") == -0.08f);
-        REQUIRE(dummy.mutation_value("healing_resting") == 0.0f);
+        REQUIRE(dummy.mutation_value("healing_awake") == -0.2f);
+        REQUIRE(dummy.mutation_value("healing_resting") == -0.2f);
 
         CHECK_THAT(dummy.healing_rate(awake_rest), WithinAbs(normal * -0.1f, tol));
         CHECK_THAT(dummy.healing_rate(sleep_rest), WithinAbs(normal, tol));
