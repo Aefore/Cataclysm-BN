@@ -5037,7 +5037,7 @@
     "name": { "str": "Disintegration" },
     "points": -10,
     "bodytemp_modifiers": [ -1500, -1500 ],
-    "description": "Your body is wasting away! You need routine medical care just to survive.",
+    "description": "Your body is wasting away! You need good medical care, and you need it more often.",
     "types": [ "HEALING" ],
     "prereqs": [ "ROT2" ],
     "category": [ "ALPHA" ],
