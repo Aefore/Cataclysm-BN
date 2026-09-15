@@ -5014,8 +5014,8 @@
     "types": [ "HEALING" ],
     "changes_to": [ "ROT2" ],
     "category": [ "ELFA" ],
-    "healing_awake": -0.002,
-    "healing_resting": -0.25
+    "healing_awake": -0.1,
+    "healing_resting": -0.1
   },
   {
     "type": "mutation",
@@ -5028,7 +5028,8 @@
     "prereqs": [ "ROT1" ],
     "changes_to": [ "ROT3" ],
     "category": [ "CHIMERA" ],
-    "healing_awake": -0.02
+    "healing_awake": -0.2,
+    "healing_resting": -0.2
   },
   {
     "type": "mutation",
@@ -5040,7 +5041,8 @@
     "types": [ "HEALING" ],
     "prereqs": [ "ROT2" ],
     "category": [ "ALPHA" ],
-    "healing_awake": -0.08
+    "healing_awake": -0.3,
+    "healing_resting": -0.3
   },
   {
     "type": "mutation",
