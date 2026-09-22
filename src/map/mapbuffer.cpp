@@ -1838,7 +1838,8 @@ auto mapbuffer::valid_move(
 
     if (down_ter.movecost == 0) { return false; }
 
-    if (!up_ter.has_flag(TFLAG_NO_FLOOR) && !up_ter.has_flag(TFLAG_GOES_DOWN) && !options.via_ramp) {
+    if (!up_ter.has_flag(TFLAG_NO_FLOOR) && !up_ter.has_flag(TFLAG_GOES_DOWN)
+        && !options.via_ramp) {
         if (std::abs(from.x() - to.x()) == 1 || std::abs(from.y() - to.y()) == 1) {
             const auto midpoint = tripoint_abs_ms(down_p.xy(), up_p.z());
             return valid_move(down_p, midpoint, options) && valid_move(midpoint, up_p, options);
