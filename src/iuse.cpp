@@ -9535,7 +9535,8 @@ int iuse::bullet_vibe_on( player *p, item *it, bool t, const tripoint_bub_ms & )
             std::string active_item = it->typeId().str();
             std::string base_item = active_item.erase( active_item.rfind( '_' ) );
 
-            p->add_msg_if_player( _( "You're too tired for a good time. You shut off your %s." ), it->display_name() );
+            p->add_msg_if_player( _( "You're too tired for a good time. You shut off your %s." ),
+                                  it->display_name() );
             it->convert( itype_id( base_item ) );
             it->deactivate();
 
