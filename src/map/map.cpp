@@ -5439,23 +5439,23 @@ static auto process_vehicle_items(vehicle& cur_veh, int turns) -> void {
 
         auto power = recharge_part.info().bonus * turns;
         power = power / 1000 + x_in_y(power % 1000, 1000);
-        
-        if(power > 0) {
-            //check if we have battery at all, otherwise skip
+
+        if (power > 0) {
+            // check if we have battery at all, otherwise skip
             auto missing = cur_veh.discharge_battery(1, false);
             if (missing > 0) { return; }
 
-            //apply recharger as if we have infinite battery, track amount
-            int charged_by = 0;     
+            // apply recharger as if we have infinite battery, track amount
+            int charged_by = 0;
             if (target.is_battery()) {
-                charged_by = units::to_joule( target.mod_energy( 1_kJ * power ) ) / 1000;
+                charged_by = units::to_joule(target.mod_energy(1_kJ * power)) / 1000;
             } else {
                 int previous_ammo = target.ammo_remaining();
                 target.ammo_set(itype_battery, previous_ammo + power);
                 charged_by = target.ammo_remaining() - previous_ammo;
             }
-            
-            //deplete battery properly, rescind any charge it didn't have enough juice to provide
+
+            // deplete battery properly, rescind any charge it didn't have enough juice to provide
             missing = cur_veh.discharge_battery(charged_by - 1, false);
             if (missing > 0) {
                 if (target.is_battery()) {
