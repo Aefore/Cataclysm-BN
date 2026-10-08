@@ -9530,7 +9530,7 @@ int use_function::call( player &p, item &it, bool active, const tripoint_bub_ms 
 int iuse::bullet_vibe_on( player *p, item *it, bool t, const tripoint_bub_ms & )
 {
     if( t ) { // Normal use
-        if( p->get_fatigue() >= fatigue_levels::dead_tired ) {
+        if( p->get_fatigue() > fatigue_levels::dead_tired ) {
 
             std::string active_item = it->typeId().str();
             std::string base_item = active_item.erase( active_item.rfind( '_' ) );
