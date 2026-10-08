@@ -14195,7 +14195,7 @@ void game::fling_creature( Creature *c, const units::angle &dir, float flvel, bo
             c->impact( damage, pt );
             // Multiply zed damage by 6 because no body parts
             const int zed_damage = std::max( 0,
-                                             ( damage - critter.get_armor_bash( bodypart_id( "torso" ) ) ) * 6 );
+                                             ( damage - ( critter.get_armor_bash( bodypart_id( "torso" ) ) / 2 ) ) * 6 );
             // TODO: Pass the "flinger" here - it's not the flung critter that deals damage
             critter.apply_damage( c, bodypart_id( "torso" ), zed_damage );
             critter.check_dead_state();
