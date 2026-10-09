@@ -54,7 +54,7 @@ inline auto flung_creature_bash_damage( const creature_size size, const int weig
 
 inline auto grabbed_stamina_cost( const float throwforce ) -> int
 {
-    return std::clamp( static_cast<int>( std::lround( throwforce * 4.0f ) ),
+    return std::clamp( static_cast<int>( std::lround( throwforce * 10.0f ) ),
                        min_stamina_cost, max_stamina_cost );
 }
 

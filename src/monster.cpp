@@ -3151,7 +3151,7 @@ int monster::impact( int force, const tripoint_bub_ms &p )
         return force;
     }
 
-    // A zombie's only body part is torso, so multiply damage to it by 6
+    // A zombie's only body part is torso, so multiply damage to it by 6 for parity with character::impact()
     force *= 6;
 
     const float mod = fall_damage_mod();
