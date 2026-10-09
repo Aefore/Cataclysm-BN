@@ -10,7 +10,7 @@ namespace creature_throw
 {
 
 constexpr auto min_stamina_cost = 100;
-constexpr auto max_stamina_cost = 800;
+constexpr auto max_stamina_cost = 1500;
 constexpr auto equal_size_throw_min_str = 12;
 constexpr auto larger_size_throw_min_str = 16;
 constexpr auto much_larger_size_throw_min_str = 20;
